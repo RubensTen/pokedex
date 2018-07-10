@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import AppRouting from './app.routing';
 
-import {Header as HeaderComponent} from './components/common/header';
+import { Header as HeaderComponent } from './components/common/header';
+import { Footer as FooterComponent } from './components/common/footer';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <div className="app-container">
           <AppRouting />
         </div>
+        <FooterComponent />
       </div>
     );
   }

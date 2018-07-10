@@ -12,9 +12,6 @@ const Home = () => (
         <section>
             this contain the brands of products
         </section>
-        <footer>
-            this is a footer page
-        </footer>
     </section>
 );
 // dude when use export default this fail in the use app routing why?
