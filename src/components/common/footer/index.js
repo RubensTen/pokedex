@@ -13,9 +13,9 @@ export class Footer extends Component {
                                 Información
                             </h4>
                             <ul>
-                                <li><a href="#">Términos y Condiciones</a></li>
-                                <li><a href="#">Preguntas frecuentes</a></li>
-                                <li><a href="#">Aviso de privacidad</a></li>
+                                <li><a href="/">Términos y Condiciones</a></li>
+                                <li><a href="/">Preguntas frecuentes</a></li>
+                                <li><a href="/">Aviso de privacidad</a></li>
                             </ul>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4} className="col">
@@ -23,8 +23,8 @@ export class Footer extends Component {
                                 Formas de pago
                             </h4>
                             <ul>
-                                <li><a href="#">Paypal</a></li>
-                                <li><a href="#">Mercado Pago</a></li>                                
+                                <li><a href="/">Paypal</a></li>
+                                <li><a href="/">Mercado Pago</a></li>                                
                             </ul>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4} className="col">
@@ -32,8 +32,8 @@ export class Footer extends Component {
                                 Extra info
                             </h4>
                             <ul>
-                                <li><a href="#">Paypal</a></li>
-                                <li><a href="#">Mercado Pago</a></li>
+                                <li><a href="/">Paypal</a></li>
+                                <li><a href="/">Mercado Pago</a></li>
                             </ul>
                         </Grid>
                     </Grid>
