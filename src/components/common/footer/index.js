@@ -7,7 +7,7 @@ export class Footer extends Component {
         return (
             <footer>
                 <div className="wrapper">
-                    <Grid container spacing={24} alignItems="stretch" direction="center" justify="center">
+                    <Grid container spacing={24} alignItems="stretch" direction="row" justify="center">
                         <Grid item xs={12} sm={4} md={4} className="col">
                             <h4 className="title">
                                 Información
