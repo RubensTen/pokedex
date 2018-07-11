@@ -24,4 +24,3 @@ package-lock.json
 
 # compiled css from sass files
 src/**/*.css
-src/*.css
