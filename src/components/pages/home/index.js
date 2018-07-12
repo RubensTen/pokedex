@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 
 const Home = () => (
-    <section id="home-wrapper" className="container">        
+    <section id="home-wrapper">
         <section>
             this contain a banner of e-commerce
         </section>

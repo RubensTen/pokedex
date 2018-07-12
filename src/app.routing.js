@@ -8,6 +8,9 @@ import { Footer as FooterComponent } from './components/common/footer';
 // page lazy components
 import {
     Home as HomeComponent,
+    Shop as ShopComponent,
+    About as AboutComponent,
+    Contact as ContactComponent,
     Login as LoginComponent,
     NotFound as NotFoundComponent
 } from './providers/lazyLoader';
@@ -19,11 +22,16 @@ const AppRouting = () => (
     <Router>
         <React.Fragment>
             <HeaderComponent/>
-            <Switch>
-                <Route exact path="/" component={HomeComponent} />
-                <Route exact path="/login" component={LoginComponent} />
-                <Route exact path="*" component={NotFoundComponent} />
-            </Switch>
+            <div className="container">
+                <Switch>
+                    <Route exact path="/" component={HomeComponent} />
+                    <Route exact path="/shop" component={ShopComponent} />
+                    <Route exact path="/about" component={AboutComponent} />
+                    <Route exact path="/contact" component={ContactComponent} />
+                    <Route exact path="/login" component={LoginComponent} />
+                    <Route exact path="*" component={NotFoundComponent} />
+                </Switch>
+            </div>
             <FooterComponent />
         </React.Fragment>
     </Router>

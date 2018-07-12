@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 
 const Login = () => (
-    <section id="wrapper-login" className="container">
+    <section id="wrapper-login">
         <h2 id="title">Welcome to the Single React App</h2>
         <form className="form">
             <div className="form-group">
