@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 // material ui components
 import Icon from '@material-ui/core/Icon';
+import Link from 'react-router-dom/Link';
 
 export class Header extends Component {
     render() {
@@ -11,18 +12,18 @@ export class Header extends Component {
                     Single <span className="orange">Ecommerce</span>
                 </h1>
                 <nav>
-                    <a href="/">Home</a>
-                    <a href="/shop">Shop</a>
-                    <a href="/about">About</a>
-                    <a href="/contact">Contact</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/shop">Shop</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/contact">Contact</Link>
                 </nav>
                 <div className="header-icons">
-                    <a href="/login">
+                    <Link to="/login">                
                         <Icon className="icon" color="disabled">account_circle</Icon>
-                    </a>
-                    <a href="/cart">
+                    </Link>
+                    <Link to="/cart">
                         <Icon className="icon" color="disabled">shopping_cart</Icon>
-                    </a>
+                    </Link>
                 </div>
             </header>
         );
