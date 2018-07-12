@@ -1,7 +1,5 @@
-import React from 'react';
 import About from './index';
 import { shallow } from 'enzyme';
-
 fdescribe('Suit Test - About Component', () => {
     it('renders without crashing', () => {
         shallow(<About />);
