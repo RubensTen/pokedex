@@ -9,7 +9,9 @@ export class Header extends Component {
         return (
             <header>
                 <h1 className="title">
-                    Single <span className="orange">Ecommerce</span>
+                    <Link to="/">
+                        Single <span className="orange">Ecommerce</span>
+                    </Link>
                 </h1>
                 <nav>
                     <Link to="/">Home</Link>
