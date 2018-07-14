@@ -6,7 +6,7 @@ export class Banner extends React.Component {
     }
     render() {
         return (
-            <div class="banner-container">
+            <div className="banner-container">
                 <img src={this.props.image.src} alt={this.props.image.alt}/>
             </div>
         );
