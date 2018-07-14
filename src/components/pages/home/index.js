@@ -1,11 +1,13 @@
 import React from 'react';
 import './index.css';
 
+import { Banner as BannerComponent } from '../../common/banner';
 const Home = () => (
     <section id="home-wrapper">
-        <section>
-            this contain a banner of e-commerce
+        <section id="banner">
+            <BannerComponent image={{src: 'assets/img/banner.jpg', alt: 'Landing home'}} />
         </section>
+        <hr/>
         <section>
             this contain a recen products
         </section>
