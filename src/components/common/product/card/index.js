@@ -10,9 +10,6 @@ import Typography from '@material-ui/core/Typography';
 import './index.css';
 
 export class ProductCard extends Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         return (
             <div className="product-card">
