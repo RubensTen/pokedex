@@ -1,91 +1,71 @@
-import React from 'react';
-import './index.css';
-
+import React, { Component } from 'react';
+// common components
 import { Banner as BannerComponent } from '../../common/banner';
 import { ProductCard as ProductCardComponent } from '../../common/product/card';
+// providers
+import { ProductProvider } from '../../../providers/product';
+//css
+import './index.css';
 
-const recentProducts = [
-    {
-        id: 1,
-        title: 'Foo product',
-        description: 'Foo description',
-        price: 1000,
-        images: [
-            'https://images-na.ssl-images-amazon.com/images/I/61rPHfR6c5L._SX679_.jpg'
-        ]
-    },
-    {
-        id: 2,
-        title: 'Foo product',
-        description: 'Foo description',
-        price: 1000,
-        images: [
-            'https://images-na.ssl-images-amazon.com/images/I/61rPHfR6c5L._SX679_.jpg'
-        ]
-    },
-    {
-        id: 3,
-        title: 'Foo product',
-        description: 'Foo description',
-        price: 1000,
-        images: [
-            'https://images-na.ssl-images-amazon.com/images/I/61rPHfR6c5L._SX679_.jpg'
-        ]
-    },
-    {
-        id: 4,
-        title: 'Foo product',
-        description: 'Foo description',
-        price: 1000,
-        images: [
-            'https://images-na.ssl-images-amazon.com/images/I/61rPHfR6c5L._SX679_.jpg'
-        ]
-    },
-    {
-        id: 5,
-        title: 'Foo product',
-        description: 'Foo description',
-        price: 1000,
-        images: [
-            'https://images-na.ssl-images-amazon.com/images/I/61rPHfR6c5L._SX679_.jpg'
-        ]
-    },
-    {
-        id: 6,
-        title: 'Foo product',
-        description: 'Foo description',
-        price: 1000,
-        images: [
-            'https://images-na.ssl-images-amazon.com/images/I/61rPHfR6c5L._SX679_.jpg'
-        ]
+export class Home extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state ={
+            recentProducts: [],
+            loading: true
+        };
+        this.productProvider = new ProductProvider();
     }
-];
-const makeRecentProducts = (recentProducts) => {    
-    return recentProducts.map((product) =>
-        <div className="product-item">
-            <ProductCardComponent product={product} key={product.id} />
-        </div>
-    );
-};
 
-const Home = () => (
-    <section id="home-wrapper">
-        <section id="banner">
-            <BannerComponent image={{src: 'assets/img/banner.jpg', alt: 'Landing home'}} />
-        </section>
-        <hr/>
-        <section className="recent-products">
-            <h2>Productos recientes</h2>
-            <div className="wrapper-recent-products">
-                {makeRecentProducts(recentProducts)}
-            </div>  
-        </section>
-        <hr/>
-        <section className="brands">
-            <h2>Nuestras Marcas</h2>
+    componentDidMount() {
+        this.loadRecenProducts();
+    }
 
-        </section>
-    </section>
-);
-// dude when use export default this fail in the use app routing why?
-export { Home };
+    /**
+     * Call api to get recent products and set value in the state of component
+     */
+    loadRecenProducts() {
+        this.productProvider.getRecentProducts().then(recentProducts => {
+            this.setState({ recentProducts, loading: false });
+        });  
+    }
+
+    /**
+     * Make elements(html components) to render recent products
+     */
+    makeRecentProducts = () => {
+        const { recentProducts, loading } = this.state;
+        if (loading) {
+            return <h4>Loading products ...</h4>
+        }else {
+            return recentProducts.map((product) => {
+                return <div className="product-item" key={product.id}>
+                    <ProductCardComponent product={product}/>
+                </div>
+            });
+        }
+    };
+        
+
+    render() {        
+        return (
+            <section id="home-wrapper">
+                <section id="banner">
+                    <BannerComponent image={{ src: 'assets/img/banner.jpg', alt: 'Landing home' }} />
+                </section>
+                <hr />
+                <section className="recent-products">
+                    <h2>Productos recientes</h2>
+                    <div className="wrapper-recent-products">
+                        {this.makeRecentProducts()}
+                    </div>
+                </section>
+                <hr />
+                <section className="brands">
+                    <h2>Nuestras Marcas</h2>
+                </section>
+            </section>
+        );
+    }
+}
