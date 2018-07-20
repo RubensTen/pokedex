@@ -64,6 +64,17 @@ export class Home extends Component {
                 <hr />
                 <section className="brands">
                     <h2>Nuestras Marcas</h2>
+                    <div className="brand-wrapper">
+                        <img src="assets/img/brands/brand1.png" alt="" />
+                        <img src="assets/img/brands/brand2.png" alt="" />
+                        <img src="assets/img/brands/brand3.png" alt="" />
+                        <img src="assets/img/brands/brand4.png" alt="" />
+                        <img src="assets/img/brands/brand5.png" alt=""/>
+                    </div>
+                </section>
+                <hr/>
+                <section id="banner">
+                    <BannerComponent image={{ src: 'assets/img/banner-footer.jpg', alt: 'Banner in footer' }} />
                 </section>
             </section>
         );

@@ -22,5 +22,14 @@
         h2 {
             font-weight: normal;
         }
+        .brand-wrapper {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px 0;
+            img {
+                width: 120px;
+                height: 20px;
+            }
+        }
     }
 }
