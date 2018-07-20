@@ -30,7 +30,7 @@ export class Home extends Component {
             this.setState({ recentProducts, loading: false });
         });  
     }
-
+1
     /**
      * Make elements(html components) to render recent products
      */
@@ -40,6 +40,13 @@ export class Home extends Component {
             return <h4>Loading products ...</h4>
         }else {
             return recentProducts.map((product) => {
+                const images = product.images.map((imageItem, index) => {
+                    return {
+                        src: imageItem,
+                        alt: `Label to image ${index}`
+                    };
+                });
+                product.images = images;
                 return <div className="product-item" key={product.id}>
                     <ProductCardComponent product={product}/>
                 </div>
@@ -54,7 +61,7 @@ export class Home extends Component {
                 <section id="banner">
                     <BannerComponent image={{ src: 'assets/img/banner.jpg', alt: 'Landing home' }} />
                 </section>
-                <hr />
+                <hr />                
                 <section className="recent-products">
                     <h2>Productos recientes</h2>
                     <div className="wrapper-recent-products">
