@@ -1,0 +1,10 @@
+.carousel-wrapper {
+    max-width: 100%;
+    div[data-swipeable] {
+        overflow-y: hidden !important;
+    }
+    .item {
+        width: 100%;
+        height: 100%;
+    }
+}
