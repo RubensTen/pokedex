@@ -27,5 +27,13 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "react-test-renderer": "^16.4.1"
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3000",
+      "pathRewrite": {
+        "^/api": "/"
+      }
+    }
   }
 }
