@@ -16,7 +16,7 @@ class HttpProvider {
             fetch(url, {
                 method: method
             })
-            .then((response) => response.json())
+            .then(response => response.json())
             .then((response) => {
                 resolve(response);
             })
