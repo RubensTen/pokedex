@@ -5,6 +5,24 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#root,
+.app-container {
+  height: 100%;
+}
+
+.app-wrapping {
+  min-height: 100%;
+  
+  &>.container {
+    padding: 20px;
+    padding-bottom: 150px;
+  }
+}
+footer {
+  height: 150px;
+  margin-top: -150px;
+}
+
 .orange {
   color: #E55446;
 }

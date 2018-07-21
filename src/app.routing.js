@@ -21,16 +21,18 @@ import { Login as LoginComponent } from './components/pages/login'; */
 const AppRouting = () => (
     <Router>
         <React.Fragment>
-            <HeaderComponent/>
-            <div className="container">
-                <Switch>
-                    <Route exact path="/" component={HomeComponent} />
-                    <Route exact path="/shop" component={ShopComponent} />
-                    <Route exact path="/about" component={AboutComponent} />
-                    <Route exact path="/contact" component={ContactComponent} />
-                    <Route exact path="/login" component={LoginComponent} />
-                    <Route exact path="*" component={NotFoundComponent} />
-                </Switch>
+            <div className="app-wrapping">
+                <HeaderComponent/>
+                <div className="container">
+                    <Switch>
+                        <Route exact path="/" component={HomeComponent} />
+                        <Route exact path="/shop" component={ShopComponent} />
+                        <Route exact path="/about" component={AboutComponent} />
+                        <Route exact path="/contact" component={ContactComponent} />
+                        <Route exact path="/login" component={LoginComponent} />
+                        <Route exact path="*" component={NotFoundComponent} />
+                    </Switch>
+                </div>
             </div>
             <FooterComponent />
         </React.Fragment>
